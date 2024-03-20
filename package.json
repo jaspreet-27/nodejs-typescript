@@ -1,0 +1,49 @@
+{
+  "name": "node-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=local nodemon ./src/index.ts",
+    "staging": "NODE_ENV=development pm2 start dist/index.js --name=node-typescript",
+    "serve": "NODE_ENV=development nodemon ./dist/index.js",
+    "build": "tsc",
+    "ri": "rm -rf dist && rm -rf node_modules && rm -rf lib && npm install",
+    "format": "prettier --write ."
+  },
+  "author": "Rajneshwar Singh",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^3.1.0",
+    "bcrypt": "^5.1.1",
+    "continuation-local-storage": "^3.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "fs": "0.0.1-security",
+    "helmet": "^7.1.0",
+    "joi": "^17.12.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.2",
+    "path": "^0.12.7",
+    "pm2": "^5.3.1",
+    "prettier": "^3.2.5",
+    "sequelize": "^6.37.1",
+    "uuid": "^9.0.1",
+    "uuidv4": "^6.2.13",
+    "winston": "^3.12.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.11.29",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  }
+}
