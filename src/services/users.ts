@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken'
 /* Environment */
 import { config } from '../config/default'
 const key: string = process.env.NODE_ENV || 'development'
-const jwtSecret = config[key].secret.jwt
+const jwtSecret = config.local.secret.jwt
 
 export class UserServices {
   public static async userList(query: any) {

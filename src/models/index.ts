@@ -5,7 +5,7 @@ import { config } from '../config/default'
 const basename = path.basename(__filename)
 const Sequelize = require('sequelize')
 const key: string = process.env.NODE_ENV || 'development'
-const { host, userName, password, database, dialect, port, logging } = config[key].db
+const { host, userName, password, database, dialect, port, logging } = config.local.db
 const db: any = {}
 
 // Connection String

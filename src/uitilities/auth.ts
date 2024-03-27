@@ -12,7 +12,7 @@ import { failAction } from '../uitilities/response'
 /* Environment */
 import { config } from '../config/default'
 const key: string = process.env.NODE_ENV || 'development'
-const jwtSecret = config[key].secret.jwt
+const jwtSecret = config.local.secret.jwt
 
 async function checkAuthToken(req: any, res: any, next: any) {
   if (req.headers.authorization) {
