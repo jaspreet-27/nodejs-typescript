@@ -21,9 +21,9 @@ describe('product', () => {
     })
   })
 
-  afterAll(async () => { //close server connection
+  afterAll(async () => {
+    //close server connection
     return new Promise((resolve) => {
-
       server.close()
       resolve(true)
     })

@@ -21,9 +21,9 @@ describe('user', () => {
   //     })
   //   })
 
-  afterAll(async () => { //close server connection
+  afterAll(async () => {
+    //close server connection
     return new Promise((resolve) => {
-
       server.close()
       resolve(true)
     })
@@ -52,7 +52,7 @@ describe('user', () => {
     it('should return a 200 status and the user', async () => {
       const payload = {
         email: 'ravi1235@yopmail.com',
-        password: 'Qwerty@123'
+        password: 'Qwerty@123',
       }
       const { body, statusCode } = await supertest(app).post(`/v1/user/login`).set(base).send(payload)
 
@@ -86,7 +86,7 @@ describe('user', () => {
     })
   })
 
-//   /* Delete users list */
+  //   /* Delete users list */
   describe('Delete a user', () => {
     it('should return a 200 status and update the user', async () => {
       const { body, statusCode } = await supertest(app).delete(`/v1/user/${userId}`).set(base)

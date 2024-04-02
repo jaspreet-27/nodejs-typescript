@@ -18,7 +18,12 @@ class userController {
   public static async userAdd(req: Request, res: Response) {
     try {
       const data = await UserServices.userAdd(req.body)
-      res.status(statusCode.success).json(successAction(statusCode.success, data, message.add('User')))
+
+      if (data == 'userAlreadyExist') {
+        res.status(statusCode.success).json(successAction(statusCode.success, data, message.alreadyExist('User')))
+      } else {
+        res.status(statusCode.success).json(successAction(statusCode.success, data, message.add('User')))
+      }
     } catch (err: any) {
       logger.error(message.errorLog('userAdd', 'userController', err))
       res.status(statusCode.badRequest).json(failAction(statusCode.badRequest, err.message, message.somethingWrong))

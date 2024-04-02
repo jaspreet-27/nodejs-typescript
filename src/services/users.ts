@@ -26,13 +26,19 @@ export class UserServices {
 
   public static async userAdd(body: any) {
     try {
-      const password = await hashPassword(body.password)
-      return await db.users.create({
-        name: body.name,
-        age: body.age,
-        email: body.email,
-        password,
-      })
+      const user = await db.users.findOne({ where: { email: body.email } })
+
+      if (user) {
+        return 'userAlreadyExist'
+      } else {
+        const password = await hashPassword(body.password)
+        return await db.users.create({
+          name: body.name,
+          age: body.age,
+          email: body.email,
+          password,
+        })
+      }
     } catch (err: any) {
       logger.error(err)
       throw new Error(err.message)
@@ -84,7 +90,7 @@ export class UserServices {
         if ((await comparePassword(body.password, user.password)) === true) {
           const token = jwt.sign({ userId: user.id }, jwtSecret, { expiresIn: 60 * 60 })
           user.dataValues['token'] = token
-
+          delete user.dataValues.password
           db.authentications.create({
             // Save authentications
             userId: user.id,

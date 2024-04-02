@@ -14,6 +14,21 @@
   },
   "author": "Rajneshwar Singh",
   "license": "ISC",
+  "keywords": [
+    "Node.js",
+    "Typescript",
+    "Sequelizer",
+    "MySQl",
+    "Rajneshwar Singh"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajneshwardits/nodejs-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rajneshwardits/nodejs-typescript/issues"
+  },
+  "homepage": "https://github.com/rajneshwardits/nodejs-typescript#readme",
   "dependencies": {
     "app-root-path": "^3.1.0",
     "axios": "^1.6.8",

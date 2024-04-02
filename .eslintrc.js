@@ -22,7 +22,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
-    //"semi": ["error", "always"],
     quotes: ['error', 'double'],
+    'max-lines-per-function': ['error', 20],
   },
 }

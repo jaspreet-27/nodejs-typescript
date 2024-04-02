@@ -27,6 +27,9 @@ export const message = {
   notExist: (labal: string) => {
     return `${labal} not exist.`
   },
+  alreadyExist: (labal: string) => {
+    return `${labal} already exist.`
+  },
   errorLog: (functionName: string, controllerName: string, err: any) => {
     return `${functionName} ${controllerName} Error @ ${err}`
   },
